@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>default</LangVersion>
-    <Version>0.1</Version>
+    <Version>0.2</Version>
     <Authors>DJ Daemonix</Authors>
     <Company>Nodsoft ES</Company>
     <Product>YumeChan PluginBase</Product>
@@ -14,6 +14,10 @@
     <None Remove=".gitignore" />
     <None Remove="LICENSE" />
     <None Remove="README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Discord.Net.WebSocket" Version="2.1.1" />
   </ItemGroup>
 
 </Project>
