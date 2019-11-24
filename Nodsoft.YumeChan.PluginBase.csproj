@@ -1,9 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <LangVersion>default</LangVersion>
-    <Version>0.3</Version>
+    <Version>0.3.1</Version>
     <Authors>DJ Daemonix</Authors>
     <Company>Nodsoft ES</Company>
     <Product>YumeChan PluginBase</Product>
@@ -17,12 +17,7 @@
   <ItemGroup>
     <None Remove=".git" />
     <None Remove=".gitignore" />
-    <None Remove="LICENSE" />
     <None Remove="README.md" />
-    <None Include="LICENSE">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
