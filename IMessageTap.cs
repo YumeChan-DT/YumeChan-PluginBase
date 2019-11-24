@@ -15,27 +15,27 @@ namespace Nodsoft.YumeChan.PluginBase
 	public interface IMessageTap
 	{
 		/// <summary>
-		/// Plugin's Internal Handler for <c>MessageReceived</c> Event.
+		/// Plugin's Internal Handler for <see cref="BaseSocketClient.MessageReceived"/> Event.
 		/// </summary>
 		/// <param name="message">Provides the Message that was received by the Event.</param>
-		/// <returns><c>Task.CompletedTask</c> when all operations were performed.</returns>
+		/// <returns><see cref="Task.CompletedTask"/> when all operations were performed.</returns>
 		Task OnMessageReceived(SocketMessage message);
 
 		/// <summary>
-		/// Plugin's Internal Handler for <c>MessageUpdated</c> Event.
+		/// Plugin's Internal Handler for <see cref="BaseSocketClient.MessageUpdated"/> Event.
 		/// </summary>
 		/// <param name="messageBeforeUpdate">Provides the Message's state (cached) prior to the Message Update.</param>
 		/// <param name="messageAfterUpdate">Provides the Message's state following the Message Update.</param>
 		/// <param name="channel">Provides the Channel of the Updated Message.</param>
-		/// <returns><c>Task.CompletedTask</c> when all operations were performed.</returns>
+		/// <returns><see cref="Task.CompletedTask"/> when all operations were performed.</returns>
 		Task OnMessageUpdated(Cacheable<IMessage, ulong> messageBeforeUpdate, SocketMessage messageAfterUpdate, ISocketMessageChannel channel);
 
 		/// <summary>
-		/// Plugin's Internal Handler for <c>MessageDeleted</c> Event.
+		/// Plugin's Internal Handler for <see cref="BaseSocketClient.MessageDeleted"/> Event.
 		/// </summary>
 		/// <param name="message">Provides the Message's state (cached) before deletion.</param>
 		/// <param name="channel">Provides the Channel of the now Deleted Message.</param>
-		/// <returns><c>Task.CompletedTask</c> when all operations were performed.</returns>
+		/// <returns><see cref="Task.CompletedTask"/> when all operations were performed.</returns>
 		Task OnMessageDeleted(Cacheable<IMessage, ulong> message, ISocketMessageChannel channel);
 	}
 }
