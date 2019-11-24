@@ -3,10 +3,15 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>default</LangVersion>
-    <Version>0.2</Version>
+    <Version>0.3</Version>
     <Authors>DJ Daemonix</Authors>
     <Company>Nodsoft ES</Company>
     <Product>YumeChan PluginBase</Product>
+    <Copyright>GNU LGPLv3</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryType>Git</RepositoryType>
+    <RepositoryUrl>https://github.com/YumeChan-DT/YumeChan-PluginBase</RepositoryUrl>
+    <NeutralLanguage></NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,6 +19,10 @@
     <None Remove=".gitignore" />
     <None Remove="LICENSE" />
     <None Remove="README.md" />
+    <None Include="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
