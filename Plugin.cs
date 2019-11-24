@@ -52,7 +52,7 @@ namespace Nodsoft.YumeChan.PluginBase
 		protected Plugin()
 		{
 			PluginVersion = GetType().Assembly.GetName().Version;
-			PluginAssemblyName = GetType().Assembly.FullName;
+			PluginAssemblyName = GetType().Assembly.GetName().Name;
 		}
 
 		/// <summary>
