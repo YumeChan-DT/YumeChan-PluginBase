@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <LangVersion>default</LangVersion>
-    <Version>0.3.1</Version>
+    <Version>0.4.0</Version>
     <Authors>DJ Daemonix</Authors>
     <Company>Nodsoft ES</Company>
     <Product>YumeChan PluginBase</Product>
