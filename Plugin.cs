@@ -11,7 +11,7 @@ namespace Nodsoft.YumeChan.PluginBase
 	/// <summary>
 	/// Defines a Plugin Manifest for YumeChan
 	/// </summary>
-	public abstract class Plugin : IPlugin
+	public abstract class Plugin
 	{
 		/// <summary>
 		/// Defines Plugin's Current Version.
