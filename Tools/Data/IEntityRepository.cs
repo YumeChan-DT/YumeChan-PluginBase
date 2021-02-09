@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace Nodsoft.YumeChan.PluginBase.Tools.Data
 {
-	public interface IEntityRepository<TDocument> where TDocument : IDocument
+	public interface IEntityRepository<TDocument, TKey> 
+		where TDocument : IDocument<TKey>
+		where TKey : IEquatable<TKey>
 	{
 		IQueryable<TDocument> AsQueryable();
 
-		IEnumerable<TDocument> FilterBy(
-			Expression<Func<TDocument, bool>> filterExpression);
+		IEnumerable<TDocument> FilterBy(Expression<Func<TDocument, bool>> filterExpression);
 		IEnumerable<TProjected> FilterBy<TProjected>(
 			Expression<Func<TDocument, bool>> filterExpression,
 			Expression<Func<TDocument, TProjected>> projectionExpression);
@@ -21,8 +22,8 @@ namespace Nodsoft.YumeChan.PluginBase.Tools.Data
 		TDocument FindOne(Expression<Func<TDocument, bool>> filterExpression);
 		Task<TDocument> FindOneAsync(Expression<Func<TDocument, bool>> filterExpression);
 
-		TDocument FindById(string id);
-		Task<TDocument> FindByIdAsync(string id);
+		TDocument FindById(TKey id);
+		Task<TDocument> FindByIdAsync(TKey id);
 
 		void InsertOne(TDocument document);
 		Task InsertOneAsync(TDocument document);
@@ -36,8 +37,8 @@ namespace Nodsoft.YumeChan.PluginBase.Tools.Data
 		void DeleteOne(Expression<Func<TDocument, bool>> filterExpression);
 		Task DeleteOneAsync(Expression<Func<TDocument, bool>> filterExpression);
 
-		void DeleteById(string id);
-		Task DeleteByIdAsync(string id);
+		void DeleteById(TKey id);
+		Task DeleteByIdAsync(TKey id);
 
 		void DeleteMany(Expression<Func<TDocument, bool>> filterExpression);
 		Task DeleteManyAsync(Expression<Func<TDocument, bool>> filterExpression);

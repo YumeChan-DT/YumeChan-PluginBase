@@ -6,11 +6,17 @@ using System;
 
 namespace Nodsoft.YumeChan.PluginBase.Tools.Data
 {
-	public interface IDocument
-	{
-		[BsonId, BsonRepresentation(BsonType.String)]
-		ObjectId Id { get; set; }
-
-		DateTime CreatedAt { get; }
-	}
+    /// <summary>
+    /// This class represents a basic document that can be stored in MongoDb.
+    /// Your document must implement this class in order for the Entity Repository to handle them.
+    /// </summary>
+    public interface IDocument<TKey> where TKey : IEquatable<TKey>
+    {
+        /// <summary>
+        /// The Primary Key, which must be decorated with the [BsonId] attribute 
+        /// if you want the MongoDb C# driver to consider it to be the document ID.
+        /// </summary>
+        [BsonId]
+        TKey Id { get; set; }
+    }
 }
