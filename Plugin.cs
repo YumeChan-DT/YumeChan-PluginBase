@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Threading.Tasks;
 
 /**
@@ -76,5 +77,11 @@ namespace Nodsoft.YumeChan.PluginBase
 			PluginLoaded = false;
 			return Task.CompletedTask;
 		}
+
+
+		/// <summary>
+		/// Configures additional services in use by this Plugin, for use in Dependency Injection.
+		/// </summary>
+		public virtual IServiceCollection ConfigureServices(IServiceCollection services) => services;
 	}
 }
