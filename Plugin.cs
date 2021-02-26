@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Reflection;
 using System.Threading.Tasks;
 
 /**
  *	Plugin.cs
- *	Licensed by YumeChan-DT (Nodsoft ES) under GNU-LGPLv3
+ *	Licensed by YumeChan-DT (Nodsoft Systems) under GNU-LGPLv3
  **/
 
 namespace Nodsoft.YumeChan.PluginBase
@@ -51,8 +53,10 @@ namespace Nodsoft.YumeChan.PluginBase
 
 		protected Plugin()
 		{
-			PluginVersion = GetType().Assembly.GetName().Version;
-			PluginAssemblyName = GetType().Assembly.GetName().Name;
+			AssemblyName assemblyName = GetType().Assembly.GetName();
+
+			PluginVersion = assemblyName.Version;
+			PluginAssemblyName = assemblyName.Name;
 		}
 
 		/// <summary>
@@ -76,5 +80,11 @@ namespace Nodsoft.YumeChan.PluginBase
 			PluginLoaded = false;
 			return Task.CompletedTask;
 		}
+
+
+		/// <summary>
+		/// Configures additional services in use by this Plugin, for use in Dependency Injection.
+		/// </summary>
+		public virtual IServiceCollection ConfigureServices(IServiceCollection services) => services;
 	}
 }
