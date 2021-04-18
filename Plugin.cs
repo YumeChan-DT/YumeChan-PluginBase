@@ -21,7 +21,7 @@ namespace Nodsoft.YumeChan.PluginBase
 		/// <remarks>
 		/// It is best practice to mirror the Assembly's Versionning, using <c>typeof(PluginManifestClass).Assembly.GetName().Version</c>.
 		/// </remarks>
-		public virtual Version PluginVersion { get; protected set; }
+		public virtual string PluginVersion { get; protected set; }
 
 		/// <summary>
 		/// Reflects the Plugin's Assembly Name.
@@ -53,10 +53,10 @@ namespace Nodsoft.YumeChan.PluginBase
 
 		protected Plugin()
 		{
-			AssemblyName assemblyName = GetType().Assembly.GetName();
+			Assembly assembly = GetType().Assembly;
 
-			PluginVersion = assemblyName.Version;
-			PluginAssemblyName = assemblyName.Name;
+			PluginVersion = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
+			PluginAssemblyName = assembly.GetName().Name;
 		}
 
 		/// <summary>
