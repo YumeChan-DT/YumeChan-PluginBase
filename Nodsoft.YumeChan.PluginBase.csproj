@@ -8,7 +8,6 @@
     <Company>Nodsoft Systems</Company>
     <Product>YumeChan PluginBase</Product>
     <Copyright>GNU LGPLv3</Copyright>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryType>Git</RepositoryType>
     <RepositoryUrl>https://github.com/YumeChan-DT/YumeChan-PluginBase</RepositoryUrl>
     <NeutralLanguage></NeutralLanguage>
