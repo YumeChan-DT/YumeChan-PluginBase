@@ -9,22 +9,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 5.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
   publish:
     name: build, pack & publish
     runs-on: ubuntu-latest
@@ -34,12 +18,12 @@ jobs:
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 3.1.200
+          dotnet-version: 5.0.x
 
       # Publish
       - name: Publish to GH Packages
         id: publish_nuget
-        uses: rohith/publish-nuget@v2
+        uses: Rebel028/publish-nuget@2.6.1
         with:
           # Filepath of the project to be packaged, relative to root of repository
           PROJECT_FILE_PATH: Nodsoft.YumeChan.PluginBase.csproj
@@ -63,10 +47,15 @@ jobs:
           TAG_FORMAT: v*
 
           # API key to authenticate with NuGet server
-          NUGET_KEY: ${{secrets.GH_PAT}}
+          NUGET_KEY: ${{ secrets.GH_PAT }}
 
           # NuGet server uri hosting the packages, defaults to https://api.nuget.org
-          NUGET_SOURCE: https://api.nuget.org
+          NUGET_SOURCE: https://nuget.pkg.github.com/YumeChan-DT
 
           # Flag to toggle pushing symbols along with nuget package to the server, disabled by default
-          INCLUDE_SYMBOLS: false
+          # INCLUDE_SYMBOLS: false
+
+          GITHUB_USER: SakuraIsayeki
+
+
+
