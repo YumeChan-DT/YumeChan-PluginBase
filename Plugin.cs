@@ -8,7 +8,7 @@ using System.Threading.Tasks;
  *	Licensed by YumeChan-DT (Nodsoft Systems) under GNU-LGPLv3
  **/
 
-namespace Nodsoft.YumeChan.PluginBase
+namespace YumeChan.PluginBase
 {
 	/// <summary>
 	/// Defines a Plugin Manifest for YumeChan
