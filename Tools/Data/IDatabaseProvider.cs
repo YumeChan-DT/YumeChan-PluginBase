@@ -1,11 +1,13 @@
 ﻿using System;
+using MongoDB.Driver;
 
-namespace Nodsoft.YumeChan.PluginBase.Tools.Data
+namespace YumeChan.PluginBase.Tools.Data
 {
+	
 	public interface IDatabaseProvider<TPlugin> where TPlugin : Plugin
 	{
-		public IEntityRepository<TEntity, TKey> GetEntityRepository<TEntity, TKey>()
-			where TEntity : IDocument<TKey>
-			where TKey : IEquatable<TKey>;
+		public IMongoDatabase GetMongoDatabase();
+
+		public void SetDb(string connectionString, string databaseName);
 	}
 }

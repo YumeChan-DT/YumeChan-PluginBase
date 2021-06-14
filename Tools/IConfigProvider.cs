@@ -1,7 +1,7 @@
 ﻿using System.IO;
 
 
-namespace Nodsoft.YumeChan.PluginBase.Tools
+namespace YumeChan.PluginBase.Tools
 {
 	/// <summary>
 	/// Provides a simple, Interface-based Config Tool, for Plugins.
