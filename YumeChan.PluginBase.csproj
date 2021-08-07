@@ -19,12 +19,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DSharpPlus.CommandsNext" Version="4.1.0" />
-    <PackageReference Include="DSharpPlus.Interactivity" Version="4.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="5.0.8" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.MessagePack" Version="5.0.8" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
-    <PackageReference Include="MongoDB.Driver" Version="2.13.1" />
+    <PackageReference Include="DSharpPlus.CommandsNext" Version="4.1.*" />
+    <PackageReference Include="DSharpPlus.Interactivity" Version="4.1.*" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="5.0.*" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.MessagePack" Version="5.0.*" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.*" />
+    <PackageReference Include="MongoDB.Driver" Version="2.13.*" />
   </ItemGroup>
 
 </Project>
