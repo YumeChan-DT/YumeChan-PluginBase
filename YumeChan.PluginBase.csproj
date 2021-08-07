@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -21,6 +21,7 @@
   <ItemGroup>
     <PackageReference Include="DSharpPlus.CommandsNext" Version="4.1.*" />
     <PackageReference Include="DSharpPlus.Interactivity" Version="4.1.*" />
+    <PackageReference Include="DSharpPlus.Lavalink" Version="4.1.*" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="5.0.*" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.MessagePack" Version="5.0.*" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.*" />
