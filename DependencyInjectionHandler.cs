@@ -1,18 +1,21 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-
+/**
+ *	DependencyInjectionHandler.cs
+ *	Licensed by YumeChan-DT (Nodsoft Systems) under GNU-LGPL v2.1
+ **/
 
 namespace YumeChan.PluginBase
 {
 	/// <summary>
 	/// Startup class to register Plugin dependencies.
 	/// </summary>
-	public abstract class InjectionRegistry
+	public abstract class DependencyInjectionHandler
 	{
 		/// <summary>
 		/// Default ctor. This should remain open and parameterless, to get instantiated by the Core.
 		/// </summary>
-		public InjectionRegistry() { }
+		public DependencyInjectionHandler() { }
 
 		/// <summary>
 		/// Configures services for the current plugin.
