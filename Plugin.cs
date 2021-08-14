@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 /**
  *	Plugin.cs
- *	Licensed by YumeChan-DT (Nodsoft Systems) under GNU-LGPLv3
+ *	Licensed by YumeChan-DT (Nodsoft Systems) under GNU-LGPL v2.1
  **/
 
 namespace YumeChan.PluginBase

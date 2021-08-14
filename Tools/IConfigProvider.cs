@@ -1,5 +1,9 @@
 ﻿using System.IO;
 
+/**
+ *	IConfigProvider.cs
+ *	Licensed by YumeChan-DT (Nodsoft Systems) under GNU-LGPL v2.1
+ **/
 
 namespace YumeChan.PluginBase.Tools
 {

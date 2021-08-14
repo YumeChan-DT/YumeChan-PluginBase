@@ -1,6 +1,9 @@
 ﻿using MongoDB.Driver;
 
-
+/**
+ *	IDatabaseProvider.cs
+ *	Licensed by YumeChan-DT (Nodsoft Systems) under GNU-LGPL v2.1
+ **/
 
 namespace YumeChan.PluginBase.Tools.Data
 {
