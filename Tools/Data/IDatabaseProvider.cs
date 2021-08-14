@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using Microsoft.EntityFrameworkCore;
+using MongoDB.Driver;
 
 /**
  *	IDatabaseProvider.cs
@@ -24,6 +25,12 @@ namespace YumeChan.PluginBase.Tools.Data
 		/// </summary>
 		/// <param name="connectionString">ConnectionString for MongoDB server connection</param>
 		/// <param name="databaseName">Name of database within the server</param>
-		public void SetDb(string connectionString, string databaseName);
+		public void SetMongoDb(string connectionString, string databaseName);
+
+		/// <summary>
+		///	Provides a <see cref="DbContextOptionsBuilder"/> used for building a <see cref="DbContext"/> for a Postgres type server.
+		/// </summary>
+		/// <returns><see cref="DbContextOptionsBuilder"/> tailored to <see cref="TPlugin"/>.</returns>
+		public DbContextOptionsBuilder GetPostgresContextOptionsBuilder();
 	}
 }
