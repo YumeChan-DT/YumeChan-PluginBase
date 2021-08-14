@@ -14,7 +14,7 @@ namespace YumeChan.PluginBase.Tools
 		/// </summary>
 		/// <remarks>
 		/// Do not forget to properly set your access modifiers & scopes. These will serve as foundation for the Config Tool.
-		/// 
+		///
 		/// Also don't forget to populate your Properties' defaults, to programatically create the Config File.
 		/// Use <see cref="string.Empty"/> if a Default is, or must be, Empty. Null-coalescing assignment is what you'll be looking for, when creating the defaults.
 		/// </remarks>
