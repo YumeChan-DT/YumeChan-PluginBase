@@ -32,6 +32,6 @@ namespace YumeChan.PluginBase.Tools.Data
 		///	Provides a <see cref="DbContextOptionsBuilder"/> used for building a <see cref="DbContext"/> for a Postgres type server.
 		/// </summary>
 		/// <returns><see cref="DbContextOptionsBuilder"/> tailored to <see cref="TPlugin"/>.</returns>
-		public Action<DbContextOptions> GetPostgresContextOptionsBuilder();
+		public Action<DbContextOptionsBuilder> GetPostgresContextOptionsBuilder();
 	}
 }
