@@ -2,9 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+
     <Version>2.4.3</Version>
     <Authors>Sakura Isayeki, VelvetThePanda</Authors>
     <Company>Nodsoft Systems</Company>
+
     <Product>YumeChan PluginBase</Product>
     <Copyright>GNU LGPLv3</Copyright>
     <RepositoryType>Git</RepositoryType>
