@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <Version>2.4.1</Version>
-    <Authors>Sakura Isayeki</Authors>
+    <Version>2.4.3</Version>
+    <Authors>Sakura Isayeki, VelvetThePanda</Authors>
     <Company>Nodsoft Systems</Company>
     <Product>YumeChan PluginBase</Product>
     <Copyright>GNU LGPLv3</Copyright>
@@ -19,12 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DSharpPlus.CommandsNext" Version="4.1.*" />
-    <PackageReference Include="DSharpPlus.Interactivity" Version="4.1.*" />
-    <PackageReference Include="DSharpPlus.Lavalink" Version="4.1.*" />
+    <PackageReference Include="DSharpPlus.CommandsNext" Version="4.2.0-nightly-00*" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="5.0.*" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.MessagePack" Version="5.0.*" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.*" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.*" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.*" />
     <PackageReference Include="MongoDB.Driver" Version="2.13.*" />
