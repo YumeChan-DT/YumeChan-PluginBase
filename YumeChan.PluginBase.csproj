@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
 
-    <Version>2.4.3</Version>
-    <Authors>Sakura Isayeki, VelvetThePanda</Authors>
+    <Version>2.4.4</Version>
+    <Authors>Sakura Akeno Isayeki</Authors>
     <Company>Nodsoft Systems</Company>
 
     <Product>YumeChan PluginBase</Product>
@@ -22,12 +22,9 @@
 
   <ItemGroup>
     <PackageReference Include="DSharpPlus.CommandsNext" Version="4.1.*" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="5.0.*" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.MessagePack" Version="5.0.*" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.*" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.*" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.*" />
-    <PackageReference Include="MongoDB.Driver" Version="2.13.*" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.*" />
+    <PackageReference Include="MongoDB.Driver" Version="2.14.*" />
   </ItemGroup>
 
 </Project>
