@@ -8,9 +8,12 @@
     <Company>Nodsoft Systems</Company>
 
     <Product>YumeChan PluginBase</Product>
+    <Title>YumeChan PluginBase</Title>
+    <Description>Base package for YumeChan plugins</Description>
     <Copyright>GNU LGPLv3</Copyright>
-    <RepositoryType>Git</RepositoryType>
+    <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/YumeChan-DT/YumeChan-PluginBase</RepositoryUrl>
+    <PackageIconUrl>https://avatars1.githubusercontent.com/u/6922006</PackageIconUrl>
     
     <Nullable>enable</Nullable>
   </PropertyGroup>
