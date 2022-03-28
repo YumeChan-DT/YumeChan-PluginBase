@@ -1,17 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
 
-    <Version>2.4.3</Version>
-    <Authors>Sakura Isayeki, VelvetThePanda</Authors>
+    <Version>2.5</Version>
+    <Authors>Sakura Akeno Isayeki</Authors>
     <Company>Nodsoft Systems</Company>
 
     <Product>YumeChan PluginBase</Product>
+    <Title>YumeChan PluginBase</Title>
+    <Description>Base package for YumeChan plugins</Description>
     <Copyright>GNU LGPLv3</Copyright>
-    <RepositoryType>Git</RepositoryType>
+    <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/YumeChan-DT/YumeChan-PluginBase</RepositoryUrl>
-    <NeutralLanguage></NeutralLanguage>
+    <PackageIconUrl>https://avatars1.githubusercontent.com/u/6922006</PackageIconUrl>
+    
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,13 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DSharpPlus.CommandsNext" Version="4.1.*" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="5.0.*" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.MessagePack" Version="5.0.*" />
+    <PackageReference Include="DSharpPlus.CommandsNext" Version="4.2.0-nightly-01102" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.*" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.*" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.*" />
-    <PackageReference Include="MongoDB.Driver" Version="2.13.*" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.*" />
+    <PackageReference Include="MongoDB.Driver" Version="2.14.*" />
   </ItemGroup>
 
 </Project>
