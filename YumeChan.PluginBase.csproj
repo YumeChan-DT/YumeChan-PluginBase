@@ -13,7 +13,7 @@
     <Copyright>GNU LGPLv3</Copyright>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/YumeChan-DT/YumeChan-PluginBase</RepositoryUrl>
-    <PackageIconUrl>https://avatars1.githubusercontent.com/u/6922006</PackageIconUrl>
+    <PackageIconUrl>https://avatars.githubusercontent.com/u/56922006</PackageIconUrl>
     
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -26,9 +26,9 @@
 
   <ItemGroup>
     <PackageReference Include="DSharpPlus.CommandsNext" Version="4.2.0-nightly-01102" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.*" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.*" />
-    <PackageReference Include="MongoDB.Driver" Version="2.14.*" />
+    <PackageReference Include="MongoDB.Driver" Version="2.15.*" />
   </ItemGroup>
 
 </Project>
