@@ -3,12 +3,11 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
 
-    <Version>2.5.1</Version>
+    <Version>2.6</Version>
     <Authors>Sakura Akeno Isayeki</Authors>
     <Company>Nodsoft Systems</Company>
 
     <Product>YumeChan PluginBase</Product>
-    <Title>YumeChan PluginBase</Title>
     <Description>Base package for YumeChan plugins</Description>
     <Copyright>GNU LGPLv3</Copyright>
     <RepositoryType>git</RepositoryType>
@@ -27,6 +26,7 @@
   <ItemGroup>
     <PackageReference Include="DSharpPlus.CommandsNext" Version="4.2.0-nightly-01102" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.*" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.*" />
     <PackageReference Include="MongoDB.Driver" Version="2.15.*" />
   </ItemGroup>

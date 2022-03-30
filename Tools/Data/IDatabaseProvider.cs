@@ -12,8 +12,8 @@ namespace YumeChan.PluginBase.Tools.Data
 	/// <summary>
 	/// Provides a database handler, for a plugin manifest of type <see cref="TPlugin"/>.
 	/// </summary>
-	/// <typeparam name="TPlugin">Type of current Plugin Manifest (inheriting <see cref="Plugin"/>)</typeparam>
-	public interface IDatabaseProvider<TPlugin> where TPlugin : Plugin
+	/// <typeparam name="TPlugin">Type of current Plugin Manifest (inheriting <see cref="IPlugin"/>)</typeparam>
+	public interface IDatabaseProvider<TPlugin> where TPlugin : IPlugin
 	{
 		/// <summary>
 		/// Gets a dedicated <see cref="IMongoDatabase"/> that can be used inside <see cref="TPlugin"/>.
