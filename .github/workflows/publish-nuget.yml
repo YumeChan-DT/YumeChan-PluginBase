@@ -9,8 +9,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  publish:
-    name: build, pack & publish
+  publish-nuget:
+    name: Build, pack, & publish to NuGet
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -55,8 +55,17 @@ jobs:
           # Flag to toggle pushing symbols along with nuget package to the server, disabled by default
           # INCLUDE_SYMBOLS: false
 
+  publish-ghpackages:
+    name: Build, pack, & publish to GitHub Packages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
 
-      # Publish
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+
       - name: Publish to GH Packages
         id: publish_ghpackages
         uses: Rebel028/publish-nuget@2.6.1
