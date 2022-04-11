@@ -1,9 +1,9 @@
 ﻿using System.IO;
 
-/***
+/*
  *	IInterfaceConfigProvider.cs
- *	Licensed by YumeChan-DT (Nodsoft Systems) under GNU-LGPL v2.1
- ***/
+ *	Licensed by YumeChan-DT (Nodsoft Systems) under MIT	License.
+ */
 
 namespace YumeChan.PluginBase.Tools;
 
