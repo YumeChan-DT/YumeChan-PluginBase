@@ -1,4 +1,4 @@
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 /*
  *	IPlugin.cs
@@ -29,6 +29,15 @@ public interface IPlugin
 	/// It is best practice to let this property be handled by <see cref="LoadAsync()"/> and <see cref="UnloadAsync()"/>.
 	/// </remarks>
 	public bool Loaded { get; }
+	
+	/// <summary>
+	/// Advises the Core whether the Plugin should be loaded from a NetRunner only.
+	/// </summary>
+	/// <remarks>
+	///	false: The Plugin is suitable for both NetRunner and ConsoleRunner.
+	/// true: The Plugin is only suitable for NetRunner.
+	/// </remarks>
+	public bool ShouldUseNetRunner { get; }
 
 	/// <summary>
 	/// Controls whether Plugin is shown when listing active Plugins.
@@ -37,7 +46,10 @@ public interface IPlugin
 	/// Bot Owners, Operators, and Verified Server Admins, may be able to bypass Stealth Mode.
 	/// It is only intended to keep the plugin's existence unknown to the general public.
 	/// </remarks>
-	/// <value><see cref="false"/> defines the Plugin as visible ; <see cref="true"/> defines the Plugin as Hidden.</value>
+	/// <value>
+	/// false: defines the Plugin as visible.
+	/// true: defines the Plugin as hidden.
+	/// </value>
 	public bool StealthMode { get; }
 
 	/// <summary>

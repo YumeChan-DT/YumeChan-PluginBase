@@ -2,10 +2,10 @@
 using System.Reflection;
 using System.Threading.Tasks;
 
-/**
+/*
  *	Plugin.cs
- *	Licensed by YumeChan-DT (Nodsoft Systems) under GNU-LGPL v2.1
- **/
+ *	Licensed by YumeChan-DT (Nodsoft Systems) under MIT License.
+ */
 
 namespace YumeChan.PluginBase;
 
@@ -13,16 +13,19 @@ namespace YumeChan.PluginBase;
 public abstract class Plugin : IPlugin
 {
 	/// <inheritdoc />
-	public virtual string Version { get; protected set; }
+	public string Version { get; }
 
 	/// <inheritdoc />
-	public string AssemblyName { get; private set; }
+	public string AssemblyName { get; }
 
 	/// <inheritdoc />
 	public abstract string DisplayName { get; }
 
 	/// <inheritdoc />
-	public virtual bool StealthMode { get; } = false;
+	public virtual bool ShouldUseNetRunner => true;
+
+	/// <inheritdoc />
+	public virtual bool StealthMode => false;
 
 	/// <inheritdoc />
 	public bool Loaded { get; protected set; }
@@ -30,7 +33,6 @@ public abstract class Plugin : IPlugin
 	protected Plugin()
 	{
 		Assembly assembly = GetType().Assembly;
-
 		Version = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion ?? "1.0.0";
 		AssemblyName = assembly.GetName().Name ?? throw new("Assembly name not found");
 	}
