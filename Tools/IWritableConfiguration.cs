@@ -16,7 +16,7 @@ public interface IWritableConfiguration : IConfiguration
 	public Task LoadFromFileAsync();
 	
 	/// <summary>
-	/// Save the configuration to the JSON file.
+	/// Saves the configuration to the JSON file.
 	/// </summary>
 	public Task SaveToFileAsync();
 
