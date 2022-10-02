@@ -1,0 +1,20 @@
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-test:
+    name: Build and Test 
+    uses: ./.github/workflows/build.yml
+    with:
+      project-path: ${{ matrix.project.path }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # Projects to publish
+        project: [ 
+          { name: "Base", path: "YumeChan.PluginBase/YumeChan.PluginBase.csproj" },
+          { name: "Database.MongoDB", path: "YumeChan.PluginBase.Database.MongoDB/YumeChan.PluginBase.Database.MongoDB.csproj" },
+          { name: "Database.Postgres", path: "YumeChan.PluginBase/YumeChan.PluginBase.Database.Postgres.csproj" },
+        ]

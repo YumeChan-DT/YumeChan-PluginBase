@@ -1,13 +1,15 @@
-name: .NET Build & Test
+name: .NET Build & Test Project
 
 on:
-  - push
-  - pull_request
-  - workflow_call
+  workflow_call:
+    inputs:
+      project-path:
+        description: 'Path to the project to build'
+        required: true
+        type: string
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -24,19 +26,20 @@ jobs:
       id: nbgv
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ${{ inputs.project-path }}
 
-    - name: Build
-      run: dotnet build --no-restore
+    - name: Build Debug
+      run: dotnet build -c debug --no-restore ${{ inputs.project-path }}
 
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal --logger "GitHubActions;report-warnings=true" ${{ inputs.project-path }}
 
-    - name: .NET Build & Pack
-      run: dotnet build -c release -o "publish"
+    - name: .NET Build Release & Pack
+      run: dotnet build -c release -o "publish" ${{ inputs.project-path }}
         
-    - name: Upload dotnet build
+    - name: Upload .NET build artifacts
       uses: actions/upload-artifact@v3
       with:
         name: dotnet-build-release
         path: "build"
+      

@@ -14,7 +14,21 @@ env:
 
 jobs:
   build-test:
+    name: Build and Test
+    strategy:
+      fail-fast: true
+      matrix:
+        # Projects to publish
+        project: [ 
+          { name: "Base", path: "YumeChan.PluginBase/YumeChan.PluginBase.csproj" },
+          { name: "Database.MongoDB", path: "YumeChan.PluginBase.Database.MongoDB/YumeChan.PluginBase.Database.MongoDB.csproj" },
+          { name: "Database.Postgres", path: "YumeChan.PluginBase.Database.Postgres/YumeChan.PluginBase.Database.Postgres.csproj" },
+        ]
     uses: ./.github/workflows/build.yml
+    with:
+      project-path: ${{ matrix.project.path }}
+
+
 
   publish-nuget:
     name: Publish NuGet package
@@ -25,13 +39,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # Projects to publish
-        project: [ 
-          { name: "Base", path: "YumeChan.PluginBase/YumeChan.PluginBase.csproj" },
-          { name: "Database.MongoDB", path: "YumeChan.PluginBase.Database.MongoDB/YumeChan.PluginBase.Database.MongoDB.csproj" },
-          { name: "Database.Postgres", path: "YumeChan.PluginBase/YumeChan.PluginBase.Database.Postgres.csproj" },
-        ]
-        
         # Sources to publish to
         nuget: [ 
           { name: "NuGet", source: "https://api.nuget.org", keyname: "NUGET_TOKEN" }, 
@@ -52,10 +59,10 @@ jobs:
         id: nbgv
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore ${{ matrix.project.path }}
 
       - name: Build
-        run: dotnet build
+        run: dotnet build -c release ${{ matrix.project.path }}
 
       - id: is-public-release
         uses: ASzc/change-string-case-action@v2
