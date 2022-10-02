@@ -7,9 +7,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.7" />
         <ProjectReference Include="..\YumeChan.PluginBase\YumeChan.PluginBase.csproj" />
         
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="6.0.9" />
     </ItemGroup>
 
 </Project>
