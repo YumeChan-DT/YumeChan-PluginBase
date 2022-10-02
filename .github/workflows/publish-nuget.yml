@@ -39,6 +39,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        # Projects to publish
+        project: [ 
+          { name: "Base", path: "YumeChan.PluginBase/YumeChan.PluginBase.csproj" },
+          { name: "Database.MongoDB", path: "YumeChan.PluginBase.Database.MongoDB/YumeChan.PluginBase.Database.MongoDB.csproj" },
+          { name: "Database.Postgres", path: "YumeChan.PluginBase.Database.Postgres/YumeChan.PluginBase.Database.Postgres.csproj" },
+        ]
         # Sources to publish to
         nuget: [ 
           { name: "NuGet", source: "https://api.nuget.org", keyname: "NUGET_TOKEN" }, 

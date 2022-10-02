@@ -16,5 +16,5 @@ jobs:
         project: [ 
           { name: "Base", path: "YumeChan.PluginBase/YumeChan.PluginBase.csproj" },
           { name: "Database.MongoDB", path: "YumeChan.PluginBase.Database.MongoDB/YumeChan.PluginBase.Database.MongoDB.csproj" },
-          { name: "Database.Postgres", path: "YumeChan.PluginBase/YumeChan.PluginBase.Database.Postgres.csproj" },
+          { name: "Database.Postgres", path: "YumeChan.PluginBase.Database.Postgres/YumeChan.PluginBase.Database.Postgres.csproj" },
         ]
