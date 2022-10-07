@@ -1,42 +1,47 @@
 ﻿using System.Threading.Tasks;
 
-/*
- *	IPlugin.cs
- *	Licensed by YumeChan-DT (Nodsoft Systems) under MIT License.
- */
-
 namespace YumeChan.PluginBase;
 
 /// <summary>
-/// Defines a Plugin Manifest for YumeChan
+/// Specifies a Plugin's Manifest for YumeChan.
 /// </summary>
+/// <remarks>
+///	Only one concrete implementation of <see cref="IPlugin"/> should exist per assembly.
+/// </remarks>
 public interface IPlugin
 {
+	#region Identification
+	
 	/// <summary>
-	/// Reflects the Plugin's Assembly Name.
+	/// The Plugin's Assembly Name, used for internal identification purposes.
 	/// </summary>
 	public string AssemblyName { get; }
 
 	/// <summary>
-	/// Defines Plugin's Display Name.
+	/// The Plugin's Display Name, used for external, user and UI display purposes.
 	/// </summary>
 	public string DisplayName { get; }
-
-	/// <summary>
-	/// Defines if the Plugin has been Loaded by the Core.
-	/// </summary>
-	/// <remarks>
-	/// It is best practice to let this property be handled by <see cref="LoadAsync()"/> and <see cref="UnloadAsync()"/>.
-	/// </remarks>
-	public bool Loaded { get; }
 	
 	/// <summary>
-	/// Advises the Core whether the Plugin should be loaded from a NetRunner only.
+	/// The Plugin's Current Version.
 	/// </summary>
 	/// <remarks>
-	///	false: The Plugin is suitable for both NetRunner and ConsoleRunner.
-	/// true: The Plugin is only suitable for NetRunner.
+	/// It is best practice to mirror the Assembly's Versionning, using <c>typeof(PluginManifestClass).Assembly.GetName().Version</c>.
 	/// </remarks>
+	string Version { get; }
+	
+	#endregion
+	
+	#region Specification
+	
+	/// <summary>
+	/// Advises if the Plugin should be loaded from a NetRunner only.
+	/// </summary>
+	/// <value>
+	///	<see langword="false"/>: The Plugin is suitable for both NetRunner and ConsoleRunner.
+	/// <br />
+	/// <see langword="true"/>: The Plugin is only suitable for NetRunner.
+	/// </value>
 	public bool ShouldUseNetRunner { get; }
 
 	/// <summary>
@@ -47,30 +52,32 @@ public interface IPlugin
 	/// It is only intended to keep the plugin's existence unknown to the general public.
 	/// </remarks>
 	/// <value>
-	/// false: defines the Plugin as visible.
-	/// true: defines the Plugin as hidden.
+	/// <see langword="false"/>: defines the Plugin as visible.
+	/// <see langword="true"/>: defines the Plugin as hidden.
 	/// </value>
 	public bool StealthMode { get; }
 
+	#endregion
+
 	/// <summary>
-	/// Defines Plugin's Current Version.
+	/// Defines if the Plugin has been Loaded by the Core.
 	/// </summary>
 	/// <remarks>
-	/// It is best practice to mirror the Assembly's Versionning, using <c>typeof(PluginManifestClass).Assembly.GetName().Version</c>.
+	/// It is best practice to let this property be handled by <see cref="LoadAsync()"/> and <see cref="UnloadAsync()"/>.
 	/// </remarks>
-	string Version { get; }
-
+	public bool Loaded { get; }
+	
 	/// <summary>
 	/// Initializes the Plugin.
 	/// </summary>
 	/// <returns><see cref="Task.CompletedTask"/> will note Plugin as Loaded.</returns>
-	/// <remarks>This method should control the behaviour of property <see cref="Loaded"/>, assigning it <see cref="true"/>.</remarks>
+	/// <remarks>This method should control the behaviour of property <see cref="Loaded"/>, assigning it <see langword="true"/>.</remarks>
 	public Task LoadAsync();
 
 	/// <summary>
 	/// Unloads the Plugin.
 	/// </summary>
 	/// <returns><see cref="Task.CompletedTask"/> will note Plugin as Unloaded.</returns>
-	/// <remarks>This method should control the behaviour of property <see cref="Loaded"/>, assigning it <see cref="true"/>.</remarks>
+	/// <remarks>This method should control the behaviour of property <see cref="Loaded"/>, assigning it <see langword="true"/>.</remarks>
 	public Task UnloadAsync();
 }

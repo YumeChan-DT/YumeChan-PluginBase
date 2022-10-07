@@ -1,14 +1,11 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Threading.Tasks;
-
-/*
- *	Plugin.cs
- *	Licensed by YumeChan-DT (Nodsoft Systems) under MIT License.
- */
 
 namespace YumeChan.PluginBase;
 
+/// <summary>
+/// Provides a base class for YumeChan plugin implementations.
+/// </summary>
 /// <inheritdoc cref="IPlugin" />
 public abstract class Plugin : IPlugin
 {
