@@ -22,12 +22,12 @@ public interface IInterfaceConfigProvider<T> where T : class
 	/// Also don't forget to populate your Properties' defaults, to programatically create the Config File.
 	/// Use <see cref="string.Empty"/> if a Default is, or must be, Empty. Null-coalescing assignment is what you'll be looking for, when creating the defaults.
 	/// </remarks>
-	T Configuration { get; set; }
+	T? Configuration { get; set; }
 
 	/// <summary>
 	/// Get-only Property pointing to the Config File itself.
 	/// </summary>
-	FileInfo ConfigFile { get; }
+	FileInfo? ConfigFile { get; }
 
 	/// <summary>
 	/// Initialization Method for the Config File. Use this before attempting access on <see cref="Configuration"/>.
