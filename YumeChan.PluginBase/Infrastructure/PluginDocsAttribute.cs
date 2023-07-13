@@ -1,6 +1,11 @@
 ﻿using System;
 using JetBrains.Annotations;
 
+/*
+ *	PluginDocsAttribute.cs
+ *	Licensed by YumeChan-DT (Nodsoft Systems) under MIT	License.
+ */
+
 namespace YumeChan.PluginBase.Infrastructure;
 
 /// <summary>

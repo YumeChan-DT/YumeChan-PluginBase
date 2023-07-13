@@ -1,4 +1,9 @@
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
+
+/*
+ *	IJsonConfigProvider.cs
+ *	Licensed by YumeChan-DT (Nodsoft Systems) under MIT	License.
+ */
 
 namespace YumeChan.PluginBase.Tools;
 // ReSharper disable once UnusedTypeParameter

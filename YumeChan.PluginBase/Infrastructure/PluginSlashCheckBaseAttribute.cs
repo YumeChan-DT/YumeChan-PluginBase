@@ -1,6 +1,11 @@
-using System;
+﻿using System;
 using DSharpPlus.SlashCommands;
 using JetBrains.Annotations;
+
+/*
+ *	PluginSlashCheckBaseAttribute.cs
+ *	Licensed by YumeChan-DT (Nodsoft Systems) under MIT	License.
+ */
 
 namespace YumeChan.PluginBase.Infrastructure;
 

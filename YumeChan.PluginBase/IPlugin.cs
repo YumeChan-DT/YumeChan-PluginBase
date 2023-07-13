@@ -1,5 +1,10 @@
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using JetBrains.Annotations;
+
+/*
+ *	IWritableConfiguration.cs
+ *	Licensed by YumeChan-DT (Nodsoft Systems) under MIT	License.
+ */
 
 namespace YumeChan.PluginBase;
 

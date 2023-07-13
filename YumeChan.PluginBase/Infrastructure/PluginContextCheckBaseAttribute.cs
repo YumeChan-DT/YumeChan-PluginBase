@@ -1,5 +1,10 @@
-using DSharpPlus.SlashCommands;
+﻿using DSharpPlus.SlashCommands;
 using JetBrains.Annotations;
+
+/*
+ *	PluginContextCheckBaseAttribute.cs
+ *	Licensed by YumeChan-DT (Nodsoft Systems) under MIT	License.
+ */
 
 namespace YumeChan.PluginBase.Infrastructure;
 

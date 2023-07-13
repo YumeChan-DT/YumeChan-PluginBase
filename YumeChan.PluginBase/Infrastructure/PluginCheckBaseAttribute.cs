@@ -1,5 +1,10 @@
-using DSharpPlus.CommandsNext.Attributes;
+﻿using DSharpPlus.CommandsNext.Attributes;
 using JetBrains.Annotations;
+
+/*
+ *	PluginCheckBaseAttribute.cs
+ *	Licensed by YumeChan-DT (Nodsoft Systems) under MIT	License.
+ */
 
 namespace YumeChan.PluginBase.Infrastructure;
 
