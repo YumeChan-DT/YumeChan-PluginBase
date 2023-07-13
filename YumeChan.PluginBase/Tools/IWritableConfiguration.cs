@@ -31,30 +31,31 @@ public interface IWritableConfiguration : IConfiguration
 	/// </summary>
 	/// <param name="path">Key to read value from</param>
 	/// <returns>Value of specified key</returns>
-	public object GetValue(string path);
+	public object? GetValue(string path);
 	
 	/// <summary>
-	/// Gets the value of type <see cref="T"/> from the specified key.
+	/// Gets the value of type <see cref="TValue"/> from the specified key,
+	/// or null if the value cannot be casted or is not found.
 	/// </summary>
 	/// <param name="path">Key to read value from</param>
-	/// <typeparam name="T">Type to read value as</typeparam>
-	/// <returns>Value of specified key</returns>
-	public T GetValue<T>(string path);
+	/// <typeparam name="TValue">Type to read value as</typeparam>
+	/// <returns>Value of specified key or null</returns>
+	public TValue? GetValue<TValue>(string path);
 
 	/// <summary>
 	/// Sets the value of type <see cref="object"/> for the specified key.
 	/// </summary>
 	/// <param name="path">Key to set value to</param>
 	/// <param name="value">Value to set</param>
-	public void SetValue(string path, object value);
+	public void SetValue(string path, object? value);
 	
 	/// <summary>
-	/// Sets the value of type <see cref="T"/> for the specified key.
+	/// Sets the value of type <see cref="TValue"/> for the specified key.
 	/// </summary>
 	/// <param name="path">Key to set value to</param>
 	/// <param name="value">Value to set</param>
-	/// <typeparam name="T">Type to set value as</typeparam>
-	public void SetValue<T>(string path, T value);
+	/// <typeparam name="TValue">Type to set value as</typeparam>
+	public void SetValue<TValue>(string path, TValue? value);
 
 	/// <summary>
 	/// Gets section of the configuration with the specified prefix.

@@ -11,8 +11,9 @@ namespace YumeChan.PluginBase.Tools;
 /// <summary>
 /// Provides a simple, Interface-based Config Tool, for Plugins.
 /// </summary>
-/// <typeparam name="T"><see cref="interface"/> with to-be-used Config Properties</typeparam>
+/// <typeparam name="TConfig">Interface with to-be-used Config Properties</typeparam>
 [PublicAPI]
+public interface IInterfaceConfigProvider<out TConfig> where TConfig : class
 {
 	/// <summary>
 	/// Config Interface. Config changes are effected by getting & setting values to these variables.
@@ -23,7 +24,7 @@ namespace YumeChan.PluginBase.Tools;
 	/// Also don't forget to populate your Properties' defaults, to programatically create the Config File.
 	/// Use <see cref="string.Empty"/> if a Default is or must be Empty. Null-coalescing assignment is what you'll be looking for, when creating the defaults.
 	/// </remarks>
-	T? Configuration { get; set; }
+	TConfig? Configuration { get; }
 
 	/// <summary>
 	/// Get-only Property pointing to the Config File itself.
@@ -35,5 +36,5 @@ namespace YumeChan.PluginBase.Tools;
 	/// </summary>
 	/// <param name="filename">Config File's expected filename.</param>
 	/// <returns>Config-ready Interface, mirrored on <see cref="Configuration"/>.</returns>
-	T InitConfig(string filename);
+	TConfig InitConfig(string filename);
 }
