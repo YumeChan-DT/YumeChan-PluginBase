@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
+using JetBrains.Annotations;
 
 namespace YumeChan.PluginBase;
 
@@ -8,6 +9,7 @@ namespace YumeChan.PluginBase;
 /// <remarks>
 ///	Only one concrete implementation of <see cref="IPlugin"/> should exist per assembly.
 /// </remarks>
+[PublicAPI]
 public interface IPlugin
 {
 	#region Identification

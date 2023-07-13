@@ -1,8 +1,14 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
+using JetBrains.Annotations;
 using Microsoft.Extensions.Configuration;
 
 namespace YumeChan.PluginBase.Tools;
 
+/// <summary>
+/// Specifies a writable configuration object,
+/// which can be used to read and write values by key based on a JSON file.
+/// </summary>
+[PublicAPI]
 public interface IWritableConfiguration : IConfiguration
 {
 	/// <summary>

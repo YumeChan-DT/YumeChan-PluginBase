@@ -1,5 +1,6 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Threading.Tasks;
+using JetBrains.Annotations;
 
 namespace YumeChan.PluginBase;
 
@@ -7,6 +8,7 @@ namespace YumeChan.PluginBase;
 /// Provides a base class for YumeChan plugin implementations.
 /// </summary>
 /// <inheritdoc cref="IPlugin" />
+[PublicAPI]
 public abstract class Plugin : IPlugin
 {
 	/// <inheritdoc />

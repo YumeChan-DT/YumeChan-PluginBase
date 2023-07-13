@@ -1,11 +1,13 @@
-﻿namespace YumeChan.PluginBase.Tools;
+using JetBrains.Annotations;
+
+namespace YumeChan.PluginBase.Tools;
 // ReSharper disable once UnusedTypeParameter
 
 /// <summary>
 /// Provides a configuration provider for JSON key-value based configuration files.
 /// </summary>
 /// <typeparam name="TPlugin">Type of the plugin's manifest.</typeparam>
-
+[PublicAPI]
 public interface IJsonConfigProvider<out TPlugin> where TPlugin : IPlugin
 {
 	/// <summary>

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using JetBrains.Annotations;
+using Microsoft.Extensions.DependencyInjection;
 
 /*
  *	DependencyInjectionHandler.cs
@@ -10,6 +11,7 @@ namespace YumeChan.PluginBase;
 /// <summary>
 /// Startup class to register Plugin dependencies.
 /// </summary>
+[PublicAPI]
 public abstract class DependencyInjectionHandler
 {
 	/// <summary>
