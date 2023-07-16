@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using JetBrains.Annotations;
 
 /*
@@ -36,6 +37,39 @@ public interface IPlugin
 	/// It is best practice to mirror the Assembly's Versionning, using <c>typeof(PluginManifestClass).Assembly.GetName().Version</c>.
 	/// </remarks>
 	string Version { get; }
+	
+	/// <summary>
+	/// Short description of the Plugin, used for external, user and UI display purposes.
+	/// </summary>
+	string? Description { get; }
+    
+	/// <summary>
+	/// Plugin Author(s), used for external, user and UI display purposes.
+	/// </summary>
+	/// <remarks>
+	/// If several authors are to be credited, it is best practice to use a comma-separated list.
+	/// </remarks>
+	string? Author { get; }
+	
+	/// <summary>
+	/// Plugin Author(s) contact information, used for external, user and UI display purposes.
+	/// </summary>
+	string? AuthorContact { get; }
+	
+	/// <summary>
+	/// Plugin's Project Homepage, used for external, user and UI display purposes.
+	/// </summary>
+	Uri? ProjectHomepage { get; }
+	
+	/// <summary>
+	/// Plugin's Source Code Repository, used for external, user and UI display purposes.
+	/// </summary>
+	Uri? SourceCodeRepository { get; }
+	
+	/// <summary>
+	/// Plugin Icon URI, used for external, user and UI display purposes.
+	/// </summary>
+	Uri? IconUri { get; }
 	
 	#endregion
 	
