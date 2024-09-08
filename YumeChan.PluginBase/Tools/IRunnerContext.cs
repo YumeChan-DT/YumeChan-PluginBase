@@ -1,4 +1,11 @@
-﻿namespace YumeChan.PluginBase.Tools;
+﻿using JetBrains.Annotations;
+
+/*
+ *	IRunnerContext.cs
+ *	Licensed by YumeChan-DT (Nodsoft Systems) under MIT	License.
+ */
+
+namespace YumeChan.PluginBase.Tools;
 
 /// <summary>
 /// Provides contextual information about the YumeCore's host (Runner).
@@ -6,6 +13,7 @@
 /// <remarks>
 ///	This class should be implemented directly by the Runner, and the Core should not touch any implementation details.
 /// </remarks>
+[PublicAPI]
 public interface IRunnerContext
 {
 	RunnerType RunnerType { get; }
@@ -17,6 +25,7 @@ public interface IRunnerContext
 /// <summary>
 /// Defines the type of a runner.
 /// </summary>
+[PublicAPI]
 public enum RunnerType
 {
 	/// <summary>

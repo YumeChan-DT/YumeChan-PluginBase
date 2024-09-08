@@ -1,11 +1,18 @@
-﻿namespace YumeChan.PluginBase.Tools;
+﻿using JetBrains.Annotations;
+
+/*
+ *	IJsonConfigProvider.cs
+ *	Licensed by YumeChan-DT (Nodsoft Systems) under MIT	License.
+ */
+
+namespace YumeChan.PluginBase.Tools;
 // ReSharper disable once UnusedTypeParameter
 
 /// <summary>
 /// Provides a configuration provider for JSON key-value based configuration files.
 /// </summary>
 /// <typeparam name="TPlugin">Type of the plugin's manifest.</typeparam>
-
+[PublicAPI]
 public interface IJsonConfigProvider<out TPlugin> where TPlugin : IPlugin
 {
 	/// <summary>

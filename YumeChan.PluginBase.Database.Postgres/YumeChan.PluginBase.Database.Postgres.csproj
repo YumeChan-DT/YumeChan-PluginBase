@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Title>YumeChan PluginBase - Postgres Database Integration</Title>
+        <Description>Integration package for YumeChan plugins using Postgres database via Entity Framework Core</Description>
+        <PackageTags>$(CommonPackageTags), postgres, database, entityframework, entityframeworkcore, efcore, npgsql</PackageTags>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\YumeChan.PluginBase\YumeChan.PluginBase.csproj" />
+
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+    </ItemGroup>
+
+</Project>

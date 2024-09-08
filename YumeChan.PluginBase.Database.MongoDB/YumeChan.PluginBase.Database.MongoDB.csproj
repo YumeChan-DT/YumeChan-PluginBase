@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    
+    <PropertyGroup>
+        <Title>YumeChan PluginBase - MongoDB Database Integration</Title>
+        <Description>Integration package for YumeChan plugins using MongoDB database</Description>
+        <PackageTags>$(CommonPackageTags), mongodb, database, mongodriver</PackageTags>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <ProjectReference Include="..\YumeChan.PluginBase\YumeChan.PluginBase.csproj" />
+        <PackageReference Include="MongoDB.Driver" Version="2.28.0" />
+    </ItemGroup>
+
+</Project>

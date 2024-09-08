@@ -1,0 +1,33 @@
+﻿<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    
+    <Company>Nodsoft Systems</Company>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/YumeChan-DT/YumeChan-PluginBase</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>icon.png</PackageIcon>
+    <CommonPackageTags>yumechan, plugin, spec, discord, bot, dsharpplus</CommonPackageTags>
+    <PackageTags>$(CommonPackageTags)</PackageTags> <!-- Default package tags -->
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.6.133" Condition="!Exists('packages.config')" PrivateAssets="all">
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="$(PackAsTool) != 'true'">
+    <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.2.4" PrivateAssets="All"/>
+  </ItemGroup>
+
+  <ItemGroup Label="PackageInfoFiles">
+    <!-- Import the Readme at build props level if there is none in the project -->
+    <None Condition="!Exists('README.md')" Include="$(_DirectoryBuildPropsBasePath)\README.md" Pack="true" PackagePath="/" />
+    <None Include="$(MSBuildThisFileDirectory)\LICENSE" Pack="true" PackagePath="/" />
+    <None Include="$(MSBuildThisFileDirectory)\icon.png" Pack="true" PackagePath="/" />
+  </ItemGroup>
+</Project>
