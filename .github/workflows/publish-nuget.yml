@@ -71,11 +71,8 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore ${{ matrix.project.path }}
 
-      - name: Build
-        run: dotnet build -c release ${{ matrix.project.path }} -o "${{ env.YumeChan_PluginsLocation }}"
-
-      - name: Package
-        run: dotnet pack -c Release --no-build --include-symbols ${{ matrix.project.path }} -o "${{ env.YumeChan_PluginsLocation }}"
+      - name: Build & Pack
+        run: dotnet pack -c Release --include-symbols ${{ matrix.project.path }} -o "${{ env.YumeChan_PluginsLocation }}"
 
       - name: Attest build provenance for .(s)nupkgs
         uses: actions/attest-build-provenance@v1
