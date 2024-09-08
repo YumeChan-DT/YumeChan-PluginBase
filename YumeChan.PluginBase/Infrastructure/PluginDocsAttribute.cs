@@ -14,7 +14,7 @@ namespace YumeChan.PluginBase.Infrastructure;
 [PublicAPI, AttributeUsage(AttributeTargets.Class | AttributeTargets.Assembly)]
 public sealed class PluginDocsAttribute : Attribute
 {
-	public const string DefaultPath = "/Docs";
+	public const string DefaultPath = "/docs";
 	
 	/// <summary>
 	/// Defines whether documentation is available for this plugin.
