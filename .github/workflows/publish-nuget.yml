@@ -55,7 +55,7 @@ jobs:
         # Sources to publish to
         nuget: [ 
           { name: "NuGet", source: "https://api.nuget.org/v3/index.json", keyname: "NUGET_TOKEN" }, 
-          { name: "GitHub Packages", source: "https://nuget.pkg.github.com/YumeChan", keyname: "GITHUB_TOKEN" } 
+          { name: "GitHub Packages", source: "https://nuget.pkg.github.com/YumeChan-DT", keyname: "GITHUB_TOKEN" } 
         ]
         
     steps:
