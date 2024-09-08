@@ -52,16 +52,19 @@ jobs:
         ]
         
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 6.0.x
+          dotnet-version: 8.0
 
-      - uses: dotnet/nbgv@main
+      - name: Setup NuGet CLI
+        uses: NuGet/setup-nuget@v2
+
+      - uses: dotnet/nbgv@v0.4
         id: nbgv
 
       - name: Restore dependencies
@@ -70,42 +73,23 @@ jobs:
       - name: Build
         run: dotnet build -c release ${{ matrix.project.path }}
 
-      - id: is-public-release
-        uses: ASzc/change-string-case-action@v2
+      - name: Package
+        run: dotnet pack -c Release --no-build --include-symbols ${{ matrix.project.path }}
+
+      - name: Attest build provenance for .(s)nupkgs
+        uses: actions/attest-build-provenance@v1
+        # Only once per package: take nuget provider
+        if: matrix.nuget.name == 'NuGet'
         with:
-          string: ${{ steps.nbgv.outputs.PublicRelease }}
+          subject-path: "${{ env.YumeChan_PluginsLocation }}/**/*.nupkg"
+          #subject-path: "**/Release/*nupkg"
 
       # Publish
-      - name: Build, Pack & Publish ${{ matrix.project.name }} to ${{ matrix.nuget.name }}
-        id: publish_nuget
-        uses: Rebel028/publish-nuget@v2.7.0
-        with:
-          # Filepath of the project to be packaged, relative to root of repository
-          PROJECT_FILE_PATH: ${{ matrix.project.path }}
-          
-          # NuGet package id, used for version detection & defaults to project name
-          # PACKAGE_NAME: Core
-          
-          # Filepath with version info, relative to root of repository & defaults to PROJECT_FILE_PATH
-          # VERSION_FILE_PATH: Directory.Build.props
-
-          # Regex pattern to extract version info in a capturing group
-          # VERSION_REGEX: ^\s*<Version>(.*)<\/Version>\s*$
-          
-          # Useful with external providers like Nerdbank.GitVersioning, ignores VERSION_FILE_PATH & VERSION_REGEX
-          VERSION_STATIC: ${{ steps.nbgv.outputs.NuGetPackageVersion }}
-
-          # Flag to toggle git tagging, enabled by default
-          TAG_COMMIT: ${{ steps.is-public-release.outputs.lowercase }}
-
-          # Format of the git tag, [*] gets replaced with actual version
-          TAG_FORMAT: v${{ steps.nbgv.outputs.MajorMinorVersion }}
-
-          # API key to authenticate with NuGet server
-          NUGET_KEY: ${{ secrets[matrix.nuget.keyname] }}
-
-          # NuGet server uri hosting the packages, defaults to https://api.nuget.org
-          NUGET_SOURCE: ${{ matrix.nuget.source }}
-
-          # Flag to toggle pushing symbols along with nuget package to the server, disabled by default
-          # INCLUDE_SYMBOLS: false
+      - name: Publish packages to ${{ matrix.nuget.name }}
+        run: |
+          dotnet nuget push "${{ env.YumeChan_PluginsLocation }}/**/*.nupkg" \
+          --source "${{ matrix.nuget.source }}" \
+          --symbol-source "${{ matrix.nuget.source }}" \
+          --api-key "${{ secrets[matrix.nuget.keyname] }}" \
+          --symbol-api-key "${{ secrets[matrix.nuget.keyname] }}" \
+          --skip-duplicate
