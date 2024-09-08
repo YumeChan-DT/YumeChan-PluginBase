@@ -12,8 +12,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="DSharpPlus.CommandsNext" Version="4.4.*" />
-        <PackageReference Include="DSharpPlus.SlashCommands" Version="4.4.*" />
+        <PackageReference Include="DSharpPlus.CommandsNext" Version="4.5.*" />
+        <PackageReference Include="DSharpPlus.SlashCommands" Version="4.5.*" />
         <PackageReference Include="JetBrains.Annotations" Version="2023.2.0" />
         <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
