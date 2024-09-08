@@ -80,13 +80,13 @@ jobs:
       - name: Build & Pack
         run: dotnet pack -c Release --include-symbols ${{ matrix.project.path }} -o "${{ env.YumeChan_PluginsLocation }}"
 
-      - name: Attest build provenance for .(s)nupkgs
-        uses: actions/attest-build-provenance@v1
-        # Only once per package: take nuget provider
-        if: matrix.nuget.name == 'NuGet'
-        with:
-          subject-path: "**/*.nupkg"
-          #subject-path: "**/Release/*nupkg"
+#      - name: Attest build provenance for .(s)nupkgs
+#        uses: actions/attest-build-provenance@v1
+#        # Only once per package: take nuget provider
+#        if: matrix.nuget.name == 'NuGet'
+#        with:
+#          subject-path: "**/*.nupkg"
+#          #subject-path: "**/Release/*nupkg"
 
       # Publish
       - name: Publish packages to ${{ matrix.nuget.name }}
