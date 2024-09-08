@@ -85,7 +85,7 @@ jobs:
         # Only once per package: take nuget provider
         if: matrix.nuget.name == 'NuGet'
         with:
-          subject-path: "${{ env.YumeChan_PluginsLocation }}/**/*.nupkg"
+          subject-path: "**/*.nupkg"
           #subject-path: "**/Release/*nupkg"
 
       # Publish
