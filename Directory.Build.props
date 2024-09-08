@@ -1,14 +1,22 @@
 ﻿<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    
     <Company>Nodsoft Systems</Company>
-    <Copyright>GNU LGPLv3</Copyright>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/YumeChan-DT/YumeChan-PluginBase</RepositoryUrl>
-    <PackageIconUrl>https://avatars.githubusercontent.com/u/56922006</PackageIconUrl>
+    <RepositoryType>git</RepositoryType>
+    
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>icon.png</PackageIcon>
+    <CommonPackageTags>yumechan, plugin, spec, discord, bot, dsharpplus</CommonPackageTags>
+    <PackageTags>$(CommonPackageTags)</PackageTags> <!-- Default package tags -->
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="Nerdbank.GitVersioning" Version="3.6.133" Condition="!Exists('packages.config')" PrivateAssets="all" >
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.6.133" Condition="!Exists('packages.config')" PrivateAssets="all">
     </PackageReference>
   </ItemGroup>
 
