@@ -9,7 +9,7 @@
     <ItemGroup>
         <ProjectReference Include="..\YumeChan.PluginBase\YumeChan.PluginBase.csproj" />
 
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.11" />
     </ItemGroup>
 
 </Project>
